@@ -9,15 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="flex flex-col gap-6">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1 ring-1 ring-white/20">
+            <Link to="/" className="flex items-center gap-3">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white p-1 ring-1 ring-white/20">
                 <img src={logo} alt="VVCS logo" className="h-full w-full object-contain" />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold leading-tight tracking-tight">
+                <span className="text-xl font-bold leading-tight tracking-tight">
                   VADAPALLI VENKATESHWARA
                 </span>
-                <span className="text-xs font-semibold tracking-widest text-accent uppercase">
+                <span className="text-sm font-semibold tracking-widest text-accent uppercase">
                   Construction Service
                 </span>
               </div>
