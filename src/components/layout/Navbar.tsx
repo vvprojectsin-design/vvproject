@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, HardHat } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/vvcs-logo.png";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -22,8 +23,8 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
-              <HardHat size={24} />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/90 p-1 ring-1 ring-primary/10">
+              <img src={logo} alt="VVCS logo" className="h-full w-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold leading-tight tracking-tight text-primary sm:text-xl">

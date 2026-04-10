@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { HardHat, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import logo from "@/assets/vvcs-logo.png";
 
 export default function Footer() {
   return (
@@ -9,8 +10,8 @@ export default function Footer() {
           {/* Company Info */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-primary">
-                <HardHat size={24} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white p-1 ring-1 ring-white/20">
+                <img src={logo} alt="VVCS logo" className="h-full w-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold leading-tight tracking-tight">
