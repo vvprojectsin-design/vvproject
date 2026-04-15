@@ -24,12 +24,32 @@ export default function Contact() {
     subject: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send the data to a server
-    alert("Thank you for your message! Our team will get back to you soon.");
-    setFormState({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      alert("Thank you for your message! Our team will get back to you soon.");
+      setFormState({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      alert("Unable to send message right now. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -171,8 +191,12 @@ export default function Contact() {
                       className="bg-white"
                     />
                   </div>
-                  <Button type="submit" className="w-full md:w-auto bg-accent hover:bg-accent/90 text-white px-10 h-14 text-lg">
-                    Send Message <Send className="ml-2" size={18} />
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full md:w-auto bg-accent hover:bg-accent/90 text-white px-10 h-14 text-lg disabled:opacity-70"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"} <Send className="ml-2" size={18} />
                   </Button>
                 </form>
               </div>
