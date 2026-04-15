@@ -24,21 +24,13 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white/95 shadow-sm backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-22 items-center justify-between py-2 sm:py-3">
-          <Link to="/" className="flex items-center gap-3 sm:gap-4">
+        <div className="flex h-20 items-center justify-between">
+          <Link to="/" className="flex items-center">
             <img
               src={logo}
               alt="VVCS logo"
-              className="logo-img h-[56px] w-[56px] object-contain"
+              className="logo-img h-12 w-auto origin-left scale-[2.8] object-contain"
             />
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold uppercase leading-tight tracking-tight text-primary sm:text-2xl">
-                VADAPALLI VENKATESHWARA
-              </span>
-              <span className="text-xs font-semibold tracking-[0.32em] text-accent uppercase sm:text-sm">
-                Construction Service
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Nav */}
