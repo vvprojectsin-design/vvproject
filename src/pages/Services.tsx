@@ -1,59 +1,31 @@
 import { motion } from "motion/react";
+import type { ReactNode } from "react";
 import { 
   HardHat, Settings, Anchor, Layers, Flame, Zap, 
-  Construction, Pipette, Wrench
+  Construction, Pipette, Wrench, ChevronDown
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { servicesData } from "@/lib/servicesData";
+import { applyImageFallback } from "@/lib/imageFallback";
 
-const services = [
-  {
-    title: "Mechanical Services",
-    icon: <Wrench className="text-accent" />,
-    desc: "Comprehensive mechanical support including equipment installation, alignment, and servicing for industrial systems."
-  },
-  {
-    title: "Lifting & Rigging Services",
-    icon: <Anchor className="text-accent" />,
-    desc: "Safe lifting operations, rigging execution, load handling, and heavy equipment shifting with planned procedures."
-  },
-  {
-    title: "Piping and Fabrication Service",
-    icon: <Pipette className="text-accent" />,
-    desc: "Industrial piping fabrication and erection with precision welding, fit-up, and reliable on-site installation."
-  },
-  {
-    title: "Heavy Structure Fabrication",
-    icon: <HardHat className="text-accent" />,
-    desc: "Fabrication of heavy structural components for plants and large-scale projects with strict quality checks."
-  },
-  {
-    title: "Construction & Engineering Services",
-    icon: <Construction className="text-accent" />,
-    desc: "End-to-end construction and engineering solutions including civil, structural, and industrial project execution."
-  },
-  {
-    title: "Maintenance Services",
-    icon: <Settings className="text-accent" />,
-    desc: "Preventive and breakdown maintenance services to ensure uninterrupted, safe, and efficient plant operations."
-  },
-  {
-    title: "Scaffolding Services",
-    icon: <Layers className="text-accent" />,
-    desc: "Scaffolding erection, dismantling, and access platform support for safe working at heights."
-  },
-  {
-    title: "Welding & Fabrication Services",
-    icon: <Flame className="text-accent" />,
-    desc: "High-quality arc, gas, TIG, and MIG welding with structural fabrication, repairs, and modification work."
-  },
-  {
-    title: "Electrical Services",
-    icon: <Zap className="text-accent" />,
-    desc: "Electrical installation, cable laying, termination, and power distribution support for industrial facilities."
-  }
-];
+const iconMap: Record<string, ReactNode> = {
+  "mechanical-services": <Wrench className="text-accent" />,
+  "lifting-rigging-services": <Anchor className="text-accent" />,
+  "piping-fabrication-service": <Pipette className="text-accent" />,
+  "heavy-structure-fabrication": <HardHat className="text-accent" />,
+  "construction-engineering-services": <Construction className="text-accent" />,
+  "maintenance-services": <Settings className="text-accent" />,
+  "scaffolding-services": <Layers className="text-accent" />,
+  "welding-fabrication-services": <Flame className="text-accent" />,
+  "electrical-services": <Zap className="text-accent" />,
+};
 
 export default function Services() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="flex flex-col">
       {/* Header */}
@@ -69,6 +41,30 @@ export default function Services() {
               Overview of our industrial service portfolio, delivered with precision and expertise. 
               We cover every aspect of construction, maintenance, and project support.
             </p>
+            <div className="mt-8 relative inline-block text-left">
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
+              >
+                Browse Service Options
+                <ChevronDown size={16} className={isMenuOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+              </button>
+              {isMenuOpen ? (
+                <div className="absolute left-0 z-20 mt-2 w-72 rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
+                  {servicesData.map((service) => (
+                    <Link
+                      key={service.slug}
+                      to={`/services/${service.slug}`}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-accent transition-colors"
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -77,7 +73,7 @@ export default function Services() {
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
+            {servicesData.map((service, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -88,14 +84,17 @@ export default function Services() {
                 <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-none shadow-sm">
                   <CardHeader className="pb-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-4">
-                      {service.icon}
+                      {iconMap[service.slug]}
                     </div>
                     <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-slate-600 leading-relaxed">
-                      {service.desc}
+                      {service.shortDesc}
                     </p>
+                    <Button asChild variant="outline" className="mt-6 w-full">
+                      <Link to={`/services/${service.slug}`}>View Service Details</Link>
+                    </Button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -134,6 +133,7 @@ export default function Services() {
                   src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=800" 
                   alt="Industrial Service" 
                   className="w-full h-full object-cover"
+                  onError={applyImageFallback}
                   referrerPolicy="no-referrer"
                 />
               </div>

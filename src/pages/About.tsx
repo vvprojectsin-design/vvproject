@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Target, Eye, Award, History, Shield } from "lucide-react";
+import siteErectionImage from "@/assets/New folder (3)/project-site-erection.jpeg";
 
 export default function About() {
   return (
@@ -41,7 +42,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=400" 
+                  src={siteErectionImage}
                   alt="Construction" 
                   className="rounded-xl shadow-lg aspect-[3/4] object-cover"
                   referrerPolicy="no-referrer"

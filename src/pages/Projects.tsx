@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { applyImageFallback } from "@/lib/imageFallback";
 import liftingRiggingImage from "@/assets/New folder (3)/lifting-rigging.jpeg";
 import pipingFabricationImage from "@/assets/New folder (3)/piping-fabrication.jpeg";
 import steelAssemblyImage from "@/assets/New folder (3)/project-steel-assembly.jpeg";
@@ -109,6 +110,7 @@ export default function Projects() {
                     src={project.image} 
                     alt={project.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={applyImageFallback}
                     referrerPolicy="no-referrer"
                   />
                   <Badge className="absolute top-4 right-4 bg-accent text-white border-none">

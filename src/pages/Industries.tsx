@@ -1,5 +1,8 @@
 import { motion } from "motion/react";
 import { Zap, Droplets, Factory, Building2, Ship, Database } from "lucide-react";
+import riggingYardImage from "@/assets/New folder (3)/project-rigging-yard.jpeg";
+import pipelineWorkImage from "@/assets/New folder (3)/project-pipe-linework.jpeg";
+import pipingFabricationImage from "@/assets/New folder (3)/piping-fabrication.jpeg";
 
 const industries = [
   {
@@ -11,7 +14,7 @@ const industries = [
   {
     title: "Oil & Gas",
     icon: <Droplets size={40} />,
-    image: "https://images.unsplash.com/photo-1544380904-c686aad2fb40?auto=format&fit=crop&q=80&w=600",
+    image: pipingFabricationImage,
     desc: "Specialized piping, structural, and maintenance solutions for refineries and offshore platforms."
   },
   {
@@ -23,7 +26,7 @@ const industries = [
   {
     title: "Infrastructure",
     icon: <Building2 size={40} />,
-    image: "https://images.unsplash.com/photo-1503387762-592dee58292b?auto=format&fit=crop&q=80&w=600",
+    image: riggingYardImage,
     desc: "Large-scale structural works for bridges, tunnels, and public utility complexes."
   },
   {
@@ -35,7 +38,7 @@ const industries = [
   {
     title: "Data Centers",
     icon: <Database size={40} />,
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=600",
+    image: pipelineWorkImage,
     desc: "Precision structural and mechanical setup for high-density computing facilities."
   }
 ];

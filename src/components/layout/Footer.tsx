@@ -77,12 +77,15 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-lg font-bold mb-6">Services</h3>
-            <ul className="flex flex-col gap-4 text-sm text-slate-300">
-              <li>Construction & Engineering</li>
+            <ul className="grid grid-cols-1 gap-3 text-sm text-slate-300">
+              <li>Mechanical Services</li>
+              <li>Lifting & Rigging Services</li>
+              <li>Piping and Fabrication Service</li>
+              <li>Heavy Structure Fabrication</li>
+              <li>Construction & Engineering Services</li>
               <li>Maintenance Services</li>
-              <li>Lifting & Rigging</li>
               <li>Scaffolding Services</li>
-              <li>Welding & Fabrication</li>
+              <li>Welding & Fabrication Services</li>
               <li>Electrical Services</li>
             </ul>
           </div>
@@ -99,7 +102,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-accent shrink-0" size={20} />
-                <span className="text-sm text-slate-300">+91 XXXXX XXXXX</span>
+                <span className="text-sm text-slate-300">+91 94947 51980</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-accent shrink-0" size={20} />
@@ -111,10 +114,11 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/10 text-center">
           <p className="text-xs text-slate-400">
-            © {new Date().getFullYear()} Vadapalli Venkateshwara Construction Service. All rights reserved.
+            &copy; {new Date().getFullYear()} Vadapalli Venkateshwara Construction Service. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
   );
 }
+
