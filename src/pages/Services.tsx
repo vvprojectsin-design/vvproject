@@ -1,70 +1,55 @@
 import { motion } from "motion/react";
 import { 
   HardHat, Settings, Anchor, Layers, Flame, Zap, 
-  Construction, Thermometer, Database, Pipette, Users, Ship 
+  Construction, Pipette, Wrench
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
-    title: "Construction & Engineering",
+    title: "Mechanical Services",
+    icon: <Wrench className="text-accent" />,
+    desc: "Comprehensive mechanical support including equipment installation, alignment, and servicing for industrial systems."
+  },
+  {
+    title: "Lifting & Rigging Services",
+    icon: <Anchor className="text-accent" />,
+    desc: "Safe lifting operations, rigging execution, load handling, and heavy equipment shifting with planned procedures."
+  },
+  {
+    title: "Piping and Fabrication Service",
+    icon: <Pipette className="text-accent" />,
+    desc: "Industrial piping fabrication and erection with precision welding, fit-up, and reliable on-site installation."
+  },
+  {
+    title: "Heavy Structure Fabrication",
+    icon: <HardHat className="text-accent" />,
+    desc: "Fabrication of heavy structural components for plants and large-scale projects with strict quality checks."
+  },
+  {
+    title: "Construction & Engineering Services",
     icon: <Construction className="text-accent" />,
-    desc: "Civil construction for buildings, roads, and foundations, structural steel fabrication & erection, and mechanical equipment installation."
+    desc: "End-to-end construction and engineering solutions including civil, structural, and industrial project execution."
   },
   {
     title: "Maintenance Services",
     icon: <Settings className="text-accent" />,
-    desc: "Preventive and breakdown maintenance, mechanical (rotating/static equipment), electrical systems, and instrumentation & control."
-  },
-  {
-    title: "Lifting & Rigging",
-    icon: <Anchor className="text-accent" />,
-    desc: "Crane operations (mobile, crawler, tower), heavy equipment shifting, rigging/slinging, and load testing with lifting plan preparation."
+    desc: "Preventive and breakdown maintenance services to ensure uninterrupted, safe, and efficient plant operations."
   },
   {
     title: "Scaffolding Services",
     icon: <Layers className="text-accent" />,
-    desc: "Scaffolding erection and dismantling, inspection and tagging systems, and access platform design."
+    desc: "Scaffolding erection, dismantling, and access platform support for safe working at heights."
   },
   {
-    title: "Welding & Fabrication",
+    title: "Welding & Fabrication Services",
     icon: <Flame className="text-accent" />,
-    desc: "Arc, gas, TIG, and MIG welding with structural fabrication, repairs, and modification work."
+    desc: "High-quality arc, gas, TIG, and MIG welding with structural fabrication, repairs, and modification work."
   },
   {
     title: "Electrical Services",
     icon: <Zap className="text-accent" />,
-    desc: "Power distribution installation, cable laying/termination, lighting systems, earthing, and lightning protection."
-  },
-  {
-    title: "Heavy Structural Works",
-    icon: <HardHat className="text-accent" />,
-    desc: "Heavy structure fabrication and erection for large-scale industrial projects."
-  },
-  {
-    title: "Boiler & Thermal Services",
-    icon: <Thermometer className="text-accent" />,
-    desc: "WHR boiler and thermal power boiler installation, erection, and maintenance support."
-  },
-  {
-    title: "Data Center Services",
-    icon: <Database className="text-accent" />,
-    desc: "Data center infrastructure setup and erection services."
-  },
-  {
-    title: "Piping & Pipeline",
-    icon: <Pipette className="text-accent" />,
-    desc: "Piping fabrication and erection, pipeline installation, and industrial piping system QA."
-  },
-  {
-    title: "Manpower Services",
-    icon: <Users className="text-accent" />,
-    desc: "Skilled and semi-skilled workforce for industrial operations and project execution."
-  },
-  {
-    title: "Shipbuilding Services",
-    icon: <Ship className="text-accent" />,
-    desc: "Industrial support services for shipbuilding and marine projects."
+    desc: "Electrical installation, cable laying, termination, and power distribution support for industrial facilities."
   }
 ];
 

@@ -1,55 +1,61 @@
 import { motion } from "motion/react";
-import { Calendar, MapPin, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import liftingRiggingImage from "@/assets/New folder (3)/lifting-rigging.jpeg";
+import pipingFabricationImage from "@/assets/New folder (3)/piping-fabrication.jpeg";
+import steelAssemblyImage from "@/assets/New folder (3)/project-steel-assembly.jpeg";
+import siteErectionImage from "@/assets/New folder (3)/project-site-erection.jpeg";
+import riggingYardImage from "@/assets/New folder (3)/project-rigging-yard.jpeg";
+import pipelineWorkImage from "@/assets/New folder (3)/project-pipe-linework.jpeg";
 
 const projects = [
   {
-    title: "Thermal Power Plant Expansion",
+    title: "Lifting & Rigging Services - Heavy Lift Execution",
+    location: "Visakhapatnam, AP",
+    year: "2024",
+    category: "Lifting & Rigging Services",
+    desc: "Execution of heavy lifting and rigging operations for industrial equipment placement with planned load handling.",
+    image: liftingRiggingImage
+  },
+  {
+    title: "Piping and Fabrication Service - Process Line Work",
+    location: "Kakinada, AP",
+    year: "2024",
+    category: "Piping and Fabrication Service",
+    desc: "Fabrication and installation of process piping systems including fit-up, welding, and final erection support.",
+    image: pipingFabricationImage
+  },
+  {
+    title: "Heavy Structure Fabrication - Structural Assembly Block",
+    location: "Vijayawada, AP",
+    year: "2023",
+    category: "Heavy Structure Fabrication",
+    desc: "Fabrication and staged assembly of heavy steel members for a high-load industrial structure.",
+    image: steelAssemblyImage
+  },
+  {
+    title: "Construction & Engineering Services - Site Erection Phase",
+    location: "Hyderabad, Telangana",
+    year: "2023",
+    category: "Construction & Engineering Services",
+    desc: "On-site civil and structural coordination for erection activities with safety-first execution standards.",
+    image: siteErectionImage
+  },
+  {
+    title: "Mechanical Services - Equipment Handling Yard",
     location: "Visakhapatnam, AP",
     year: "2023",
-    category: "Power",
-    desc: "Complete structural erection and piping for a 500MW thermal power unit expansion.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
+    category: "Mechanical Services",
+    desc: "Mechanical support works for industrial equipment movement, alignment preparation, and installation readiness.",
+    image: riggingYardImage
   },
   {
-    title: "Oil Refinery Shutdown Maintenance",
-    location: "Jamnagar, Gujarat",
+    title: "Welding & Fabrication Services - Pipeline Section",
+    location: "Rajahmundry, AP",
     year: "2022",
-    category: "Oil & Gas",
-    desc: "Successful execution of a 45-day major maintenance shutdown for a leading refinery.",
-    image: "https://images.unsplash.com/photo-1544380904-c686aad2fb40?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Heavy Structural Fabrication",
-    location: "Kakinada, AP",
-    year: "2023",
-    category: "Manufacturing",
-    desc: "Fabrication and installation of 2000 tons of heavy steel structures for a new manufacturing facility.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Data Center Mechanical Setup",
-    location: "Hyderabad, Telangana",
-    year: "2024",
-    category: "Tech Infrastructure",
-    desc: "Installation of HVAC and structural supports for a Tier-4 data center facility.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Ship Hull Structural Repair",
-    location: "Hindustan Shipyard, VSP",
-    year: "2023",
-    category: "Shipbuilding",
-    desc: "Major structural repairs and welding for a commercial cargo vessel.",
-    image: "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Industrial Pipeline Network",
-    location: "Paradip, Odisha",
-    year: "2022",
-    category: "Piping",
-    desc: "Laying of 15km high-pressure industrial pipeline for chemical transport.",
-    image: "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=800"
+    category: "Welding & Fabrication Services",
+    desc: "Field welding and fabrication support for pipeline section development with quality and dimensional checks.",
+    image: pipelineWorkImage
   }
 ];
 
@@ -110,10 +116,6 @@ export default function Projects() {
                   </Badge>
                 </div>
                 <div className="p-8">
-                  <div className="flex items-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">
-                    <span className="flex items-center gap-1"><MapPin size={14} /> {project.location}</span>
-                    <span className="flex items-center gap-1"><Calendar size={14} /> {project.year}</span>
-                  </div>
                   <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">
                     {project.title}
                   </h3>
