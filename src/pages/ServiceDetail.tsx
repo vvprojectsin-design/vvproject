@@ -3,6 +3,8 @@ import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { servicesData } from "@/lib/servicesData";
+import { applyImageFallback } from "@/lib/imageFallback";
+import { getServiceImage } from "@/lib/serviceImages";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -11,6 +13,10 @@ export default function ServiceDetail() {
   if (!service) {
     return <Navigate to="/services" replace />;
   }
+
+  const serviceImage =
+    getServiceImage(service.slug) ??
+    "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=1200";
 
   return (
     <div className="flex flex-col">
@@ -32,6 +38,15 @@ export default function ServiceDetail() {
 
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
+          <div className="mb-8 overflow-hidden rounded-2xl border bg-white shadow-sm">
+            <img
+              src={serviceImage}
+              alt={service.title}
+              className="h-72 w-full object-cover md:h-96"
+              onError={applyImageFallback}
+              referrerPolicy="no-referrer"
+            />
+          </div>
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 bg-white rounded-2xl border p-8">
               <h2 className="text-2xl font-bold text-primary mb-6">Scope of Work</h2>

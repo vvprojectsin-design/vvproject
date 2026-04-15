@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { servicesData } from "@/lib/servicesData";
 import { applyImageFallback } from "@/lib/imageFallback";
+import { getServiceImage } from "@/lib/serviceImages";
 
 const iconMap: Record<string, ReactNode> = {
   "mechanical-services": <Wrench className="text-accent" />,
@@ -82,6 +83,15 @@ export default function Services() {
                 transition={{ delay: i * 0.05 }}
               >
                 <Card className="h-full hover:shadow-xl transition-shadow duration-300 border-none shadow-sm">
+                  <div className="aspect-[16/10] overflow-hidden rounded-t-xl">
+                    <img
+                      src={getServiceImage(service.slug) ?? "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=800"}
+                      alt={service.title}
+                      className="h-full w-full object-cover"
+                      onError={applyImageFallback}
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                   <CardHeader className="pb-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-4">
                       {iconMap[service.slug]}
