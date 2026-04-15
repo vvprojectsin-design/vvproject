@@ -97,16 +97,16 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="text-accent shrink-0" size={20} />
                 <span className="text-sm text-slate-300">
-                  Your City
+                  1-150, Nagashesha Building Street, Ravulapalem, East Godavari, Andhra Pradesh - 533238
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-accent shrink-0" size={20} />
-                <span className="text-sm text-slate-300">+91 94947 51980</span>
+                <span className="text-sm text-slate-300">+91 95739 30371 | +91 94947 51980</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-accent shrink-0" size={20} />
-                <span className="text-sm text-slate-300">your@email.com</span>
+                <span className="text-sm text-slate-300">vvcspvtltd@gmail.com</span>
               </li>
             </ul>
           </div>

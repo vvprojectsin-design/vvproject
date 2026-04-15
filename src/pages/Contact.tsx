@@ -7,6 +7,16 @@ import { Label } from "@/components/ui/label";
 import * as React from "react";
 import { useState } from "react";
 
+const companyContact = {
+  owner: "Medapati Saisubbireddy",
+  phonePrimary: "+91 95739 30371",
+  phoneSecondary: "+91 94947 51980",
+  email: "vvcspvtltd@gmail.com",
+  website: "vvprojects.in",
+  registerNo: "37AALCV9479J1Z9",
+  address: "1-150, Nagashesha Building Street, Ravulapalem, East Godavari, Andhra Pradesh - 533238",
+};
+
 export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
@@ -56,7 +66,7 @@ export default function Contact() {
                     <div>
                       <h4 className="font-bold text-primary mb-1">Our Office</h4>
                       <p className="text-slate-600 text-sm leading-relaxed">
-                        Your City
+                        {companyContact.address}
                       </p>
                     </div>
                   </div>
@@ -67,7 +77,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-primary mb-1">Call Us</h4>
-                      <p className="text-slate-600 text-sm">+91 XXXXX XXXXX</p>
+                      <p className="text-slate-600 text-sm">{companyContact.phonePrimary}</p>
+                      <p className="text-slate-600 text-sm">{companyContact.phoneSecondary}</p>
                     </div>
                   </div>
                   
@@ -77,7 +88,19 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-bold text-primary mb-1">Email Us</h4>
-                      <p className="text-slate-600 text-sm">your@email.com</p>
+                      <p className="text-slate-600 text-sm">{companyContact.email}</p>
+                      <p className="text-slate-600 text-sm">{companyContact.website}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/5 text-primary flex items-center justify-center shrink-0">
+                      <MapPin size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-primary mb-1">Register No</h4>
+                      <p className="text-slate-600 text-sm">{companyContact.registerNo}</p>
+                      <p className="text-slate-600 text-sm">{companyContact.owner}</p>
                     </div>
                   </div>
 
@@ -164,7 +187,7 @@ export default function Contact() {
           <div className="text-center">
             <MapPin size={48} className="mx-auto mb-4 opacity-20" />
             <p className="uppercase tracking-widest text-xs">Google Maps Integration Placeholder</p>
-            <p className="text-sm mt-2">Visakhapatnam, Andhra Pradesh</p>
+            <p className="text-sm mt-2">Ravulapalem, East Godavari, Andhra Pradesh - 533238</p>
           </div>
         </div>
       </section>
