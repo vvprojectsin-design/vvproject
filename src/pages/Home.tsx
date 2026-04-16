@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { servicesData } from "@/lib/servicesData";
+import liftingRiggingHomeImage from "@/assets/Lifting & Rigging Services/WhatsApp Image 2026-04-16 at 4.48.40 PM.jpeg";
 
 export default function Home() {
   const serviceIcons: Record<string, JSX.Element> = {
@@ -95,10 +96,9 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" 
+                  src={liftingRiggingHomeImage}
                   alt="Industrial Construction" 
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                 />
               </div>
               <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-xl shadow-xl border hidden md:block max-w-xs">
