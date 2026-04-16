@@ -1,9 +1,35 @@
 import { motion } from "motion/react";
-import { ArrowRight, CheckCircle2, Shield, Users, Zap, HardHat } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Shield,
+  Wrench,
+  Truck,
+  Hammer,
+  Building2,
+  Settings,
+  Construction,
+  Flame,
+  Zap,
+  Cable,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { servicesData } from "@/lib/servicesData";
 
 export default function Home() {
+  const serviceIcons: Record<string, JSX.Element> = {
+    "mechanical-services": <Wrench size={32} />,
+    "lifting-rigging-services": <Truck size={32} />,
+    "piping-fabrication-service": <Hammer size={32} />,
+    "heavy-structure-fabrication": <Building2 size={32} />,
+    "construction-engineering-services": <Construction size={32} />,
+    "maintenance-services": <Settings size={32} />,
+    "scaffolding-services": <Shield size={32} />,
+    "welding-fabrication-services": <Flame size={32} />,
+    "electrical-services": <Cable size={32} />,
+  };
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -117,50 +143,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Key Services Preview */}
+      {/* Services */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Core Specializations</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Services</h2>
             <p className="text-slate-600">
-              We offer a wide range of industrial services tailored to meet the specific needs 
-              of power plants, oil & gas, and manufacturing sectors.
+              Explore our complete range of industrial services designed for construction, fabrication, maintenance, and engineering needs.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Experienced Workforce",
-                desc: "Highly skilled professionals with years of industry expertise.",
-                icon: <Users size={32} />,
-              },
-              {
-                title: "Safety-First Approach",
-                desc: "Strict adherence to safety standards and zero-accident policy.",
-                icon: <Shield size={32} />,
-              },
-              {
-                title: "Timely Project Delivery",
-                desc: "Commitment to meeting deadlines without compromising quality.",
-                icon: <Zap size={32} />,
-              },
-              {
-                title: "Cost-Effective Solutions",
-                desc: "Optimized processes to deliver value-driven industrial services.",
-                icon: <CheckCircle2 size={32} />,
-              }
-            ].map((highlight, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {servicesData.map((service, i) => (
               <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
                 className="p-8 rounded-2xl border bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300"
               >
                 <div className="w-16 h-16 rounded-xl bg-primary text-white flex items-center justify-center mb-6">
-                  {highlight.icon}
+                  {serviceIcons[service.slug] ?? <Zap size={32} />}
                 </div>
-                <h3 className="text-xl font-bold text-primary mb-4">{highlight.title}</h3>
-                <p className="text-slate-600 text-sm">{highlight.desc}</p>
+                <h3 className="text-xl font-bold text-primary mb-4">{service.title}</h3>
+                <p className="text-slate-600 text-sm">{service.shortDesc}</p>
               </motion.div>
             ))}
           </div>
