@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { servicesData } from "@/lib/servicesData";
-import liftingRiggingHomeImage from "@/assets/Lifting & Rigging Services/WhatsApp Image 2026-04-16 at 4.48.40 PM.jpeg";
+import liftingRiggingHomeImage from "@/assets/WhatsApp Image 2026-04-18 at 2.55.17 PM.jpeg";
 
 export default function Home() {
   const serviceIcons: Record<string, JSX.Element> = {
