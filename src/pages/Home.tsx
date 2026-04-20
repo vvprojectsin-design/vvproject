@@ -94,23 +94,12 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-slate-900">
                 <img 
                   src={liftingRiggingHomeImage}
                   alt="Industrial Construction" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
-              </div>
-              <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-xl shadow-xl border hidden md:block max-w-xs">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-accent/10 rounded-lg text-accent">
-                    <Shield size={24} />
-                  </div>
-                  <h4 className="font-bold text-primary">Certified Safety</h4>
-                </div>
-                <p className="text-sm text-slate-600">
-                  We maintain the highest safety standards in the industry, ensuring zero accidents on site.
-                </p>
               </div>
             </div>
             
