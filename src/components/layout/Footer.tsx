@@ -19,16 +19,40 @@ export default function Footer() {
               Delivering excellence in engineering and maintenance since 1995.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-slate-300 hover:text-accent transition-colors">
+              <a
+                href="https://www.facebook.com/profile.php?id=61569220287421&rdid=8zctNzu9o2EIHx2P&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Gspybvs3X%2F#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-slate-300 hover:text-accent transition-colors"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-slate-300 hover:text-accent transition-colors">
+              <a
+                href="https://x.com/vvprojectsin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+                className="text-slate-300 hover:text-accent transition-colors"
+              >
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-slate-300 hover:text-accent transition-colors">
+              <a
+                href="https://www.linkedin.com/company/vadapalli-venkateshwara-construction-service/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-slate-300 hover:text-accent transition-colors"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-slate-300 hover:text-accent transition-colors">
+              <a
+                href="https://www.instagram.com/vvprojects.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-slate-300 hover:text-accent transition-colors"
+              >
                 <Instagram size={20} />
               </a>
             </div>
